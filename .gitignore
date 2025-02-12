@@ -1,0 +1,5 @@
+*.o
+result
+.zig-cache/
+.direnv/
+zig-out/
