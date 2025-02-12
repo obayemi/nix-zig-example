@@ -26,6 +26,14 @@
                 installPhase = "mkdir -p $out/bin; install -t $out/bin hello";
               };
           default = hello;
+          docker = pkgs.dockerTools.buildImage {
+            name = "hellllo";
+            tag = "latest";
+            copyToRoot = [hello pkgs.bash];
+            config = {
+              Cmd = [ "${hello}/bin/hello" ];
+            };
+          };
         };
       });
 }

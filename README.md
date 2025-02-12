@@ -23,6 +23,13 @@ nix build
 nix run
 ```
 
+### Build docker container
+
+```sh
+nix build .#docker
+docker load < result
+```
+
 ### Get shell with access to all needed tools
 
 > automated by direnv
